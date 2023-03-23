@@ -7,7 +7,7 @@ function readImage() {
         };       
         file.readAsDataURL(this.files[0]); //lê o arquivo como uma URL de dados
     }
-}
+
 document.getElementById("img-input").addEventListener("change", readImage, false);
 
 //em resumo, a função readImage le um arquivo de imagem selecionado pelo usuário e exibe uma visualização da imagem em uma tag html de img usando uma URL

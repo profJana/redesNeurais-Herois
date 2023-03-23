@@ -1,13 +1,16 @@
 function readImage() {
-    if (this.files && this.files[0]) {
-        var file = new FileReader();
-        file.onload = function(e) {
-            document.getElementById("preview").src = e.target.result;
+    if (this.files && this.files[0]) { //verifica se um arquivo existe
+        var file = new FileReader(); //cria um novo objeto FileReader
+        file.onload = function(e) { //adiciona uma função de callback para quando o arquivo for carregado
+            document.getElementById("preview").src = e.target.result; //define o src da tag de imagem para a imagem carregada
+    }
         };       
-        file.readAsDataURL(this.files[0]);
+        file.readAsDataURL(this.files[0]); //lê o arquivo como uma URL de dados
     }
 }
 document.getElementById("img-input").addEventListener("change", readImage, false);
+
+//em resumo, a função readImage le um arquivo de imagem selecionado pelo usuário e exibe uma visualização da imagem em uma tag html de img usando uma URL
 
 console.log('ml5 version:', ml5.version);
   
